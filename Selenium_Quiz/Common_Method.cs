@@ -32,16 +32,17 @@ namespace Selenium_Quiz
             if (driver == "Chrome" || driver == "chrome")
             {
                 commonDriver = new ChromeDriver();
+                log.Info("Chrome Driver launch");
             }
             else if (driver == "firefox")
             {
                 commonDriver = new FirefoxDriver();
-
+                log.Info("Firefox Driver launch");
             }
             else if (driver == "edge")
             {
                 commonDriver = new EdgeDriver();
-
+                log.Info("Edge Driver launch");
             }
             commonDriver.Manage().Window.Maximize();
             return commonDriver;
@@ -61,6 +62,7 @@ namespace Selenium_Quiz
 
         #endregion
 
+
         #region Verify element
         public void verifyElement(By Locate,string value)
         {
@@ -78,11 +80,13 @@ namespace Selenium_Quiz
 
         #endregion
 
+
         #region Url calling
         public void driverUrl(string url)
         {
+            log.Info("Navigate to URL http://automationexercise.com");
             commonDriver.Url = url;
-            //commonDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            log.Info("The open url is "+url);
         }
         #endregion
 
@@ -126,6 +130,7 @@ namespace Selenium_Quiz
         }
         #endregion
 
+
         #region Drop down
         public void dropdown(By locator ,string a)
         {
@@ -134,6 +139,7 @@ namespace Selenium_Quiz
         }
 
         #endregion
+
 
         #region Removing the Text 
 
@@ -221,6 +227,7 @@ namespace Selenium_Quiz
 
         #endregion
 
+
         #region Get Element State
         public string getElementState(By locator)
         {
@@ -234,7 +241,9 @@ namespace Selenium_Quiz
         #region Scroll To Element
         public void scrollToElement(By locator)
         {
-            IWebElement state = findElement(locator);
+           
+
+            IWebElement state = WaitforElement(locator);
             IJavaScriptExecutor commonExecuter = (IJavaScriptExecutor)commonDriver;
             commonExecuter.ExecuteScript("arguments[0].scrollIntoView(true); ", state);
 
@@ -277,7 +286,7 @@ namespace Selenium_Quiz
             }
             catch
             {
-                WebDriverWait wait = new WebDriverWait(commonDriver, TimeSpan.FromSeconds(60));
+                WebDriverWait wait = new WebDriverWait(commonDriver, TimeSpan.FromSeconds(20));
                 wait.Until(driver => IsPageReady() == true && IsElementVisible(by) == true && IsClickable(by) == true);
                 element = findElement(by);
             }
@@ -318,6 +327,7 @@ namespace Selenium_Quiz
         }
 
         #endregion
+
 
         #region Element present
         private bool IsElementPresent(By by)

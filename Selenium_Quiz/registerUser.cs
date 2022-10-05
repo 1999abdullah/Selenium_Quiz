@@ -12,8 +12,9 @@ namespace Selenium_Quiz
 
 
         #region elements
-
-        By automationHeadaing = By.XPath("//*[@id='slider-carousel']/div/div[1]/div[1]/h1/span");
+        
+        //*[@id='slider-carousel']/div/div[1]/div[1]/h1/span
+        By automationHeadaing = By.XPath("//div[@class='col-sm-6']//child::h1");
         By signupButton = By.XPath("//a[text()=' Signup / Login']");
         By signupTitle = By.XPath("//h2[text()='New User Signup!']");
         By name = By.Name("name");
@@ -70,58 +71,74 @@ namespace Selenium_Quiz
 
         void verifyHomepage(string value)
         {
+            log.Info("Verify that home page is visible successfully");
             verifyElement(automationHeadaing,value);
+            log.Info("The visible element is "+ value);
         }
 
 
         void clickSignup()
         {
-
+            log.Info("Click on Signup / Login button");
             click(signupButton);
+            log.Info("Signup button clicked");
             
         }
 
         void verifySignuptitle(string value)
         {
+            log.Info("Verify New User Signup! is visible");
             verifyElement(signupTitle, value);
+            log.Info("New User Signup! is visible successfully");
         }
 
 
         void inputname(String nameInput)
         {
+            log.Info("Enter name");
             setText(name, nameInput);
+            log.Info("Entered name is "+nameInput);
         }
 
         void inputemail(String emailInput)
         {
+            log.Info("Enter email");
             setText(email, emailInput);
+            log.Info("Entered email is " + emailInput);
         }
         void clickSignup2()
         {
-
+            log.Info("Click Signup button");
             click(signupButton2);
+            log.Info("Signup button clicked");
 
         }
 
         void verifyaccountinfo(string value)
         {
+            log.Info("Verify that ENTER ACCOUNT INFORMATION is visible");
             verifyElement(accountinfo, value);
+            log.Info("Verifed text is "+value);
         }
 
         void filldetail1(string pass,string days,string months,string year)
         {
+            log.Info("Fill details: Title, Name, Email, Password, Date of birth");
             click(gender);
             setText(password, pass);
             dropdown(day,days);
             dropdown(month,months);
             dropdown(years, year);
+            log.Info("Filled details are " +pass+ " "+days+" "+months+" "+year);
         }
 
         void clickNewsletter()
         {
             if (!findElement(newsletter).Selected)
             {
+                log.Info("Select checkbox Sign up for our newsletter!");
                 click(newsletter);
+                log.Info("Checkbox is selected");
             }
 
         }
@@ -130,13 +147,16 @@ namespace Selenium_Quiz
         {
             if (!findElement(option).Selected)
             {
+                log.Info("Select checkbox Receive special offers from our partners!");
                 click(option);
+                log.Info("Checkbox is selected");
             }
 
         }
 
         void filldetail2(string f, string l, string c, string a1, string a2,string c1,string s, string ci,string z,string m)
         {
+            log.Info("Fill details: First name, Last name, Company, Address, Address2, Country, State, City,Zipcode, Mobile Number");
             setText(firstname, f);
             setText(last_name, l);
             setText(company, c);
@@ -147,42 +167,50 @@ namespace Selenium_Quiz
             setText(city, ci);
             setText(zipcode, z);
             setText(mobile_number, m);
+            log.Info("Filled details are " + f + " " + l + " " + c + " " + a1 +" "+a1+" "+c1+" "+s+" "+ci+" "+z+" "+m);
 
         }
 
         void clickCreateAccount()
         {
-           
-                click(createAccount);
+            log.Info("Click Create Account button");
+            click(createAccount);
+            log.Info("Click action perform");
   
         }
 
         void verifyAccountCreated(string value)
         {
+            log.Info("Verify that ACCOUNT CREATED! is visible");
             verifyElement(accountCreated, value);
+            log.Info("ACCOUNT CREATED! is verified");
         }
 
         void clickContineou()
         {
-
+            log.Info("Click Continue button");
             click(Continue);
+            log.Info("Continue button is clicked");
 
         }
 
         void verifyLoginUsername(string value)
         {
+            log.Info("Verify that Logged in as username is visible");
             verifyElement(loginUsername, value);
+            log.Info("The visible user name is "+value);
+
         }
 
         #endregion
 
-        #region Register
 
+        #region Register
 
         public  void registerUser(string[] a)
         {
             landingPage(a[0]);
-            verifyHomepage("Automation");
+            verifyHomepage("AutomationExercise");
             clickSignup();
             verifySignuptitle("New User Signup!");
             inputname(a[1]);
