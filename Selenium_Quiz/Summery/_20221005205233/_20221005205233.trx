@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="952e02bc-29c2-4517-9811-95f22ff4db45" name="samiiabd@CRLHV-PRET37 2022-10-05 20:53:02" runUser="CONTOURSOFTWARE\samiiabd" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-10-05T20:53:02.5792972+05:00" queuing="2022-10-05T20:53:02.5792972+05:00" start="2022-10-05T20:52:40.1711947+05:00" finish="2022-10-05T20:53:17.5277254+05:00" />
+  <TestSettings name="default" id="050cce02-8954-45a6-8b99-fd8f5bec2963">
+    <Deployment runDeploymentRoot="samiiabd_CRLHV-PRET37_2022-10-05_20_53_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="40e4836c-c83b-42e8-af6e-c9bf3756f7d7" testId="e8cc59d7-5417-44a2-bdbc-4b7ed625c970" testName="Placeorder (Data Row 0)" computerName="CRLHV-PRET37" duration="00:00:14.6149862" startTime="2022-10-05T20:53:02.5122959+05:00" endTime="2022-10-05T20:53:17.1337209+05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40e4836c-c83b-42e8-af6e-c9bf3756f7d7">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Selenium_Quiz.Automation.Placeorder threw exception: &#xD;
+OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2//b[text()='Enter Account Information']"}
+  (Session info: chrome=106.0.5249.91)</Message>
+          <StackTrace>    at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__11_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at Selenium_Quiz.Common_method.findElement(By Locate) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 60&#xD;
+   at Selenium_Quiz.Common_method.IsElementVisible(By by) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 318&#xD;
+   at Selenium_Quiz.Common_method.verifyElement(By Locate, String value) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 69&#xD;
+   at Selenium_Quiz.RegisterUser.verifyaccountinfo(String value) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\registerUser.cs:line 120&#xD;
+   at Selenium_Quiz.RegisterUser.registerUser(String[] a) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\registerUser.cs:line 219&#xD;
+   at Selenium_Quiz.Automation.Placeorder() in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Automation.cs:line 101&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e9ae6568-3c16-407e-9a5e-59b32318d1cc" testId="6b61cb58-d708-4ff4-bb85-37584c17a2a5" testName="TestCaseRegisterUser (Data Row 0)" computerName="CRLHV-PRET37" duration="00:00:14.9334931" startTime="2022-10-05T20:52:45.9572458+05:00" endTime="2022-10-05T20:53:02.4422959+05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9ae6568-3c16-407e-9a5e-59b32318d1cc">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Selenium_Quiz.Automation.TestCaseRegisterUser threw exception: &#xD;
+OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2//b[text()='Enter Account Information']"}
+  (Session info: chrome=106.0.5249.91)</Message>
+          <StackTrace>    at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__11_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at Selenium_Quiz.Common_method.findElement(By Locate) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 60&#xD;
+   at Selenium_Quiz.Common_method.IsElementVisible(By by) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 318&#xD;
+   at Selenium_Quiz.Common_method.verifyElement(By Locate, String value) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Common_Method.cs:line 69&#xD;
+   at Selenium_Quiz.RegisterUser.verifyaccountinfo(String value) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\registerUser.cs:line 120&#xD;
+   at Selenium_Quiz.RegisterUser.registerUser(String[] a) in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\registerUser.cs:line 219&#xD;
+   at Selenium_Quiz.Automation.TestCaseRegisterUser() in C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\Automation.cs:line 65&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Placeorder (Data Row 0)" storage="c:\users\samiiabd\source\repos\selenium_quiz\selenium_quiz\bin\debug\selenium_quiz.dll" id="e8cc59d7-5417-44a2-bdbc-4b7ed625c970">
+      <Execution id="40e4836c-c83b-42e8-af6e-c9bf3756f7d7" />
+      <TestMethod codeBase="C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\bin\Debug\Selenium_Quiz.dll" adapterTypeName="executor://mstestadapter/v2" className="Selenium_Quiz.Automation" name="Placeorder" />
+    </UnitTest>
+    <UnitTest name="TestCaseRegisterUser (Data Row 0)" storage="c:\users\samiiabd\source\repos\selenium_quiz\selenium_quiz\bin\debug\selenium_quiz.dll" id="6b61cb58-d708-4ff4-bb85-37584c17a2a5">
+      <Execution id="e9ae6568-3c16-407e-9a5e-59b32318d1cc" />
+      <TestMethod codeBase="C:\Users\samiiabd\source\repos\Selenium_Quiz\Selenium_Quiz\bin\Debug\Selenium_Quiz.dll" adapterTypeName="executor://mstestadapter/v2" className="Selenium_Quiz.Automation" name="TestCaseRegisterUser" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e8cc59d7-5417-44a2-bdbc-4b7ed625c970" executionId="40e4836c-c83b-42e8-af6e-c9bf3756f7d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b61cb58-d708-4ff4-bb85-37584c17a2a5" executionId="e9ae6568-3c16-407e-9a5e-59b32318d1cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" passed="0" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

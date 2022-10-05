@@ -130,6 +130,18 @@ namespace Selenium_Quiz
         }
         #endregion
 
+        #region Click 2
+
+        public void click2(By locator)
+        {
+           
+                IWebElement element = findElement(locator);
+
+                action = new Actions(commonDriver);
+                action.Click(element).Build().Perform();
+           
+        }
+        #endregion
 
         #region Drop down
         public void dropdown(By locator ,string a)
@@ -316,6 +328,7 @@ namespace Selenium_Quiz
         {
 
             return (findElement(by).Displayed || findElement(by).Enabled) ? true : false;
+
 
         }
 

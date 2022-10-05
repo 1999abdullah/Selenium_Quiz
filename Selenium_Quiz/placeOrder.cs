@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Selenium_Quiz
@@ -13,19 +14,41 @@ namespace Selenium_Quiz
         #region elements
        
         
-        By product = By.XPath("//a[text()=' Products']");
-        By brand = By.XPath("//h2[text()='Brands']");
-        By p = By.XPath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/a");
-        
+        By product = By.XPath("(//i[@class='fa fa-shopping-cart'])[2]");
+        By cartbutton1 = By.XPath("(//*[@id='cartModal']/div/div/div[3]/button");
+
+
         #endregion
 
         #region Placeorder
 
+        void scrollToproduct()
+        {
+            scrollToElement(product);
+        }
+
+        void clickProduct()
+        {
+            click(product);
+            
+        }
+
+        
+
+
+
+
         public void placeorder()
         {
-           
-           click(product);
-           scrollToElement(brand);
+            scrollToproduct();
+            clickProduct();
+            Thread.Sleep(5000);
+            IWebElement state = findElement(cartbutton1);
+            IJavaScriptExecutor commonExecuter = (IJavaScriptExecutor)commonDriver;
+            commonExecuter.ExecuteScript("arguments[0].scrollIntoView(true); ", state);
+
+
+
 
         }
 
