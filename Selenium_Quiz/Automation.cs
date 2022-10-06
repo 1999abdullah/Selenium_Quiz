@@ -27,6 +27,7 @@ namespace Selenium_Quiz
             register = new RegisterUser();
             Common_method.log.Info("Test case start");
         }
+
         [TestCleanup]
         public void testCleanup()
         {
@@ -64,9 +65,9 @@ namespace Selenium_Quiz
 
             #endregion
 
-
             register.registerUser(values);
         }
+
 
         [TestMethod]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "register_data.XML", "LoginWithValidCredentials", DataAccessMethod.Sequential)]
@@ -99,7 +100,6 @@ namespace Selenium_Quiz
             string[] values = new string[] { url, name, email, password, days, month, year, fname, lname, company, address1, address2, country, state, city, postaladdress, number ,message, cardname , cardnumber, cvc , monthexpire , yearexpire };
 
             #endregion
-
 
             placeOrder order = new placeOrder();
             register.registerUser(values);
@@ -139,7 +139,6 @@ namespace Selenium_Quiz
             string[] values = new string[] { url, name, email, password, days, month, year, fname, lname, company, address1, address2, country, state, city, postaladdress, number, message, cardname, cardnumber, cvc, monthexpire, yearexpire };
 
             #endregion
-
 
             invoicePage invoice = new invoicePage();
             invoice.downloadinvoice(values);

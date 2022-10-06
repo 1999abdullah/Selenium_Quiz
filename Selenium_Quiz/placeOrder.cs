@@ -30,18 +30,18 @@ namespace Selenium_Quiz
         By pay = By.Id("submit");
         By successMessage = By.XPath("//div[contains(text(),'Your order has been placed successfully!')]");
 
-
         #endregion
 
 
 
         #region Placeorder Steps
 
-        
+        #region Step 1
         public void scrollToproduct()
         {
             scrollToElement(product);
         }
+        #endregion
 
         public void clickProduct()
         {

@@ -22,7 +22,6 @@ namespace Selenium_Quiz
         public static readonly log4net.ILog log =
         log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
        
-
         Actions action;
 
         #region Webdriver
@@ -52,7 +51,6 @@ namespace Selenium_Quiz
 
         #region General Method
 
-
         #region Find element
         public IWebElement findElement(By Locate)
         {
@@ -61,7 +59,6 @@ namespace Selenium_Quiz
         }
 
         #endregion
-
 
         #region Verify element
         public void verifyElement(By Locate,string value)
@@ -80,7 +77,6 @@ namespace Selenium_Quiz
 
         #endregion
 
-
         #region Url calling
         public void driverUrl(string url)
         {
@@ -89,7 +85,6 @@ namespace Selenium_Quiz
             log.Info("The open url is "+url);
         }
         #endregion
-
 
         #region Send Text 
         public void setText(By locate, string text)
@@ -124,7 +119,6 @@ namespace Selenium_Quiz
         }
         #endregion
 
-
         #region Click 
 
         public void click(By locator)
@@ -143,8 +137,6 @@ namespace Selenium_Quiz
         }
         #endregion
 
-        
-
         #region Drop down
         public void dropdown(By locator ,string a)
         {
@@ -153,7 +145,6 @@ namespace Selenium_Quiz
         }
 
         #endregion
-
 
         #region Removing the Text 
 
@@ -168,7 +159,6 @@ namespace Selenium_Quiz
         }
         #endregion
 
-
         #region Close Driver
         public static void close()
         {
@@ -177,7 +167,6 @@ namespace Selenium_Quiz
 
         #endregion
 
-
         #region Sleep method
         public void sleep(int seconds)
         {
@@ -185,7 +174,6 @@ namespace Selenium_Quiz
             
         }
         #endregion
-
 
         #region Get Element Text
         public string getElementText(By locator)
@@ -211,7 +199,6 @@ namespace Selenium_Quiz
 
         }
         #endregion
-
 
         #region Is Element Text Feild
         private bool isElementTextFeild(By locator)
@@ -241,7 +228,6 @@ namespace Selenium_Quiz
 
         #endregion
 
-
         #region Get Element State
         public string getElementState(By locator)
         {
@@ -250,7 +236,6 @@ namespace Selenium_Quiz
 
         }
         #endregion
-
 
         #region Scroll To Element
         public void scrollToElement(By locator)
@@ -264,7 +249,6 @@ namespace Selenium_Quiz
 
         }
         #endregion
-
 
         #region Execute Java ScriptCode
         public static string ExecuteJavaScriptCode(string javascriptCode)
@@ -283,7 +267,6 @@ namespace Selenium_Quiz
         }
 
         #endregion
-
 
         #region Wait for  Element
         private IWebElement WaitforElement(By by, int timeToReadyElement = 0)
@@ -342,7 +325,6 @@ namespace Selenium_Quiz
         }
 
         #endregion
-
 
         #region Element present
         private bool IsElementPresent(By by)
