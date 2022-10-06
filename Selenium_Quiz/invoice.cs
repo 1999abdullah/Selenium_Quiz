@@ -16,17 +16,21 @@ namespace Selenium_Quiz
     {
         placeOrder place = new placeOrder();
 
+        #region Element
 
         By register_login = By.XPath("(//a[@href='/login'])[2]");
         By download = By.XPath("//a[text()='Download Invoice']");
-        
+        #endregion
 
+        #region Click register user
         public void clickRegistrUser()
         {
             
             click(register_login);
         }
+        #endregion
 
+        #region Click Download
         public void downloadButton()
         {
 
@@ -46,6 +50,9 @@ namespace Selenium_Quiz
             
         }
 
+        #endregion
+
+        #region Main Method
         public void downloadinvoice(string[] a)
         {
             landingPage(a[0]);
@@ -75,7 +82,7 @@ namespace Selenium_Quiz
             clickContineou();
 
         }
-        
+        #endregion
 
     }
 }

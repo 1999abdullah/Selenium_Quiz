@@ -33,63 +33,78 @@ namespace Selenium_Quiz
         #endregion
 
 
-
         #region Placeorder Steps
 
-        #region Step 1
+        #region Scroll to product
         public void scrollToproduct()
         {
             scrollToElement(product);
         }
         #endregion
 
+
+        #region Click Product
         public void clickProduct()
         {
             Thread.Sleep(2000);
             click(product);
             
         }
+        #endregion
 
+        #region Click Contineou
         public void clickContineu()
         {
             click(contineo);
 
         }
+        #endregion
 
+        #region Click Cart
         public void clickCart()
         {
             scrollToElement(cartbutton);
             click(cartbutton);
 
         }
+        #endregion
 
+        #region verify Checkout Button
         public void verifyCheckoutButton(string value)
         {
             verifyElement(checkoutbutton, value);
 
         }
+        #endregion
 
-        public  void clickProceed()
+        #region Click Proceed
+        public void clickProceed()
         {
             
             click(checkoutbutton);
 
         }
+        #endregion
+
+        #region verify Address Detail
         public void verifyAddressDetail(string userAddress,string productName)
         {
             verifyElement(address,userAddress);
             scrollToElement(review);
             verifyElement(reviewProduct, productName);
         }
-       
+        #endregion
+
+        #region Enter Discription
         public void enterDiscription(string mess)
         {
             scrollToElement(message);
             simpleSetText(message, mess);
             click(placeOrders);
         }
+        #endregion
 
-
+        #region paymentDetails
         public void paymentDetails(string cardName, string cardNum, string cvvNum, string monthExpire, string yearExpire)
         {
             setText(name_on_card, cardName);
@@ -99,20 +114,25 @@ namespace Selenium_Quiz
             setText(expiry_year, yearExpire);
             
         }
+        #endregion
 
+        #region Click Pay to procced button
         public void clickPay()
         {
             click(pay);
         }
+        #endregion
 
+        #region verify Success message
         public void verifySuccessmessage(string mess)
         {
             commonDriver.Navigate().Back();
             verifyElement(successMessage, mess);
             commonDriver.Navigate().Forward();
         }
+        #endregion
 
-
+        #region Main calling method
         public void placeorder(string[] a)
         {
             scrollToproduct();
@@ -128,7 +148,9 @@ namespace Selenium_Quiz
             clickPay();
             verifySuccessmessage("Your order has been placed successfully!");
         }
+        #endregion
 
+        #region Download calling method
         public void downPlaceOrder(string[] a)
         {
             clickCart();
@@ -138,8 +160,9 @@ namespace Selenium_Quiz
             enterDiscription(a[17]);
             paymentDetails(a[18], a[19], a[20], a[21], a[22]);
             clickPay();
-           // verifySuccessmessage("Your order has been placed successfully!");
+           //verifySuccessmessage("Your order has been placed successfully!");
         }
+        #endregion
 
 
 
