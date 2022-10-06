@@ -111,6 +111,19 @@ namespace Selenium_Quiz
         }
         #endregion
 
+        #region Simple Send Text 
+        public void simpleSetText(By locate, string text)
+        {
+
+                IWebElement findedElement = findElement(locate);
+                findedElement.Clear();
+                removeElemntText(findedElement);
+                findedElement.SendKeys(text + Keys.Tab);
+            
+
+        }
+        #endregion
+
 
         #region Click 
 
@@ -130,18 +143,7 @@ namespace Selenium_Quiz
         }
         #endregion
 
-        #region Click 2
-
-        public void click2(By locator)
-        {
-           
-                IWebElement element = findElement(locator);
-
-                action = new Actions(commonDriver);
-                action.Click(element).Build().Perform();
-           
-        }
-        #endregion
+        
 
         #region Drop down
         public void dropdown(By locator ,string a)
@@ -298,7 +300,7 @@ namespace Selenium_Quiz
             }
             catch
             {
-                WebDriverWait wait = new WebDriverWait(commonDriver, TimeSpan.FromSeconds(20));
+                WebDriverWait wait = new WebDriverWait(commonDriver, TimeSpan.FromSeconds(10));
                 wait.Until(driver => IsPageReady() == true && IsElementVisible(by) == true && IsClickable(by) == true);
                 element = findElement(by);
             }

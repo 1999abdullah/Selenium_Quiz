@@ -42,86 +42,91 @@ namespace Selenium_Quiz
         By accountCreated = By.XPath("//h2//b[text()='Account Created!']");
         By Continue = By.XPath("//a[text()='Continue']");
         By loginUsername = By.XPath("//b[text()='Sharoon']");
-        
-
-
-        
-
-
 
         #endregion
 
 
-        #region Constructor
-        public RegisterUser(IWebDriver driver1)
+        #region Test steps
+
+        #region Step 1
+
+        public void landingPage(string u)
         {
-            commonDriver = driver1;
-        }
-        #endregion
-
-
-        #region operation-methods
-
-        void landingPage(string u)
-        {
-           
             driverUrl(u);
-           
         }
 
-        void verifyHomepage(string value)
+        #endregion
+
+        #region Step 2
+        public void verifyHomepage(string value)
         {
             log.Info("Verify that home page is visible successfully");
             verifyElement(automationHeadaing,value);
             log.Info("The visible element is "+ value);
         }
+        #endregion
 
+        #region Step 3
 
-        void clickSignup()
+        public void clickSignup()
         {
             log.Info("Click on Signup / Login button");
             click(signupButton);
             log.Info("Signup button clicked");
             
         }
+        #endregion
 
-        void verifySignuptitle(string value)
+        #region Step 4
+
+        public void verifySignuptitle(string value)
         {
             log.Info("Verify New User Signup! is visible");
             verifyElement(signupTitle, value);
             log.Info("New User Signup! is visible successfully");
         }
+        #endregion
 
-
-        void inputname(String nameInput)
+        #region Step 5
+        public void inputname(String nameInput)
         {
             log.Info("Enter name");
             setText(name, nameInput);
             log.Info("Entered name is "+nameInput);
         }
+        #endregion
 
-        void inputemail(String emailInput)
+        #region Step 6
+
+        public void inputemail(String emailInput)
         {
             log.Info("Enter email");
             setText(email, emailInput);
             log.Info("Entered email is " + emailInput);
         }
-        void clickSignup2()
+        #endregion
+
+        #region Step 7
+        public void clickSignup2()
         {
             log.Info("Click Signup button");
             click(signupButton2);
             log.Info("Signup button clicked");
 
         }
+        #endregion
 
-        void verifyaccountinfo(string value)
+        #region Step 8
+        public void verifyaccountinfo(string value)
         {
             log.Info("Verify that ENTER ACCOUNT INFORMATION is visible");
             verifyElement(accountinfo, value);
             log.Info("Verifed text is "+value);
         }
+        #endregion
 
-        void filldetail1(string pass,string days,string months,string year)
+        #region Step 9
+        public void filldetail1(string pass,string days,string months,string year)
         {
             log.Info("Fill details: Title, Name, Email, Password, Date of birth");
             click(gender);
@@ -131,8 +136,10 @@ namespace Selenium_Quiz
             dropdown(years, year);
             log.Info("Filled details are " +pass+ " "+days+" "+months+" "+year);
         }
+        #endregion
 
-        void clickNewsletter()
+        #region Step 10
+        public void clickNewsletter()
         {
             if (!findElement(newsletter).Selected)
             {
@@ -142,8 +149,10 @@ namespace Selenium_Quiz
             }
 
         }
+        #endregion
 
-        void clickOption()
+        #region Step 11
+        public void clickOption()
         {
             if (!findElement(option).Selected)
             {
@@ -153,8 +162,10 @@ namespace Selenium_Quiz
             }
 
         }
+        #endregion
 
-        void filldetail2(string f, string l, string c, string a1, string a2,string c1,string s, string ci,string z,string m)
+        #region Step 12
+        public void filldetail2(string f, string l, string c, string a1, string a2,string c1,string s, string ci,string z,string m)
         {
             log.Info("Fill details: First name, Last name, Company, Address, Address2, Country, State, City,Zipcode, Mobile Number");
             setText(firstname, f);
@@ -167,47 +178,54 @@ namespace Selenium_Quiz
             setText(city, ci);
             setText(zipcode, z);
             setText(mobile_number, m);
-            log.Info("Filled details are " + f + " " + l + " " + c + " " + a1 +" "+a1+" "+c1+" "+s+" "+ci+" "+z+" "+m);
-
+            log.Info("Filled details are "+f+" "+l+" "+c+" "+a1+" "+a1+" "+c1+" "+s+" "+ci+" "+z+" "+m);
         }
+        #endregion
 
-        void clickCreateAccount()
+        #region Step 13
+        public void clickCreateAccount()
         {
             log.Info("Click Create Account button");
             click(createAccount);
             log.Info("Click action perform");
-  
         }
+        #endregion
 
-        void verifyAccountCreated(string value)
+        #region Step 14
+        public void verifyAccountCreated(string value)
         {
             log.Info("Verify that ACCOUNT CREATED! is visible");
             verifyElement(accountCreated, value);
             log.Info("ACCOUNT CREATED! is verified");
         }
+        #endregion
 
-        void clickContineou()
+        #region Step 15
+        public void clickContineou()
         {
             log.Info("Click Continue button");
             click(Continue);
             log.Info("Continue button is clicked");
 
         }
+        #endregion
 
-        void verifyLoginUsername(string value)
+        #region Step 16
+        public void verifyLoginUsername(string value)
         {
             log.Info("Verify that Logged in as username is visible");
             verifyElement(loginUsername, value);
             log.Info("The visible user name is "+value);
 
         }
+        #endregion
 
         #endregion
 
 
         #region Register
 
-        public  void registerUser(string[] a)
+        public void registerUser(string[] a)
         {
             landingPage(a[0]);
             verifyHomepage("AutomationExercise");
@@ -226,8 +244,6 @@ namespace Selenium_Quiz
             clickContineou();
             verifyLoginUsername(a[1]);
         }
-
-
 
         #endregion
 
