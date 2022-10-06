@@ -5,7 +5,7 @@ using System;
 namespace Selenium_Quiz
 {
     [TestClass]
-    public class Automation
+    public class Automation : ExtentReport
     {
 
        
@@ -20,9 +20,18 @@ namespace Selenium_Quiz
 
         }
 
+        [ClassInitialize]
+        public static void GetTestContext(TestContext test)
+        {
+            LogReport("TestReport");
+
+        }
+       
+
         [TestInitialize]
         public void testInitalize()
         {
+            LogReport(TestContext.TestName);
             Common_method.webDriver("chrome");
             register = new RegisterUser();
             Common_method.log.Info("Test case start");
@@ -35,11 +44,14 @@ namespace Selenium_Quiz
             Common_method.log.Info("Test case close");
         }
 
-        
+
+
         [TestMethod]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "register_data.XML", "LoginWithValidCredentials", DataAccessMethod.Sequential)]
         public void TestCaseRegisterUser()
         {
+            
+
             #region xml to string
             string url = TestContext.DataRow["url"].ToString();
 
@@ -64,7 +76,8 @@ namespace Selenium_Quiz
             string[] values = new string[] { url,name,email,password,days,month,year,fname,lname,company,address1,address2, country,state, city,postaladdress,number };
 
             #endregion
-
+            exParentTest = extentReports.CreateTest(TestContext.TestName);
+            exChildTest = exParentTest.CreateNode("register user");
             register.registerUser(values);
         }
 
@@ -145,6 +158,11 @@ namespace Selenium_Quiz
 
         }
 
+        [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            extentReports.Flush();
+        }
 
     }
 }

@@ -12,10 +12,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports.Reporter.Configuration;
 
 namespace Selenium_Quiz
 {
-    public class Common_method
+    public class Common_method : ExtentReport
     {
         public static IWebDriver commonDriver;
 
@@ -24,10 +27,14 @@ namespace Selenium_Quiz
        
         Actions action;
 
+        
+           
+
         #region Webdriver
 
         public static IWebDriver webDriver(string driver)
         {
+            
             if (driver == "Chrome" || driver == "chrome")
             {
                 commonDriver = new ChromeDriver();
@@ -97,6 +104,7 @@ namespace Selenium_Quiz
                 findedElement.Clear();
                 removeElemntText(findedElement);
                 findedElement.SendKeys(text + Keys.Tab);
+                exChildTest.Log(Status.Pass, text);
             }
             else if (a == false)
             {

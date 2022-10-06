@@ -454,6 +454,7 @@
   <ItemGroup>
     <Compile Include="Automation.cs" />
     <Compile Include="Common_Method.cs" />
+    <Compile Include="Extentreport.cs" />
     <Compile Include="invoice.cs" />
     <Compile Include="placeOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
